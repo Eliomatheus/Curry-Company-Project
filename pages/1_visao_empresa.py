@@ -257,13 +257,17 @@ st.sidebar.markdown( '## Fastest Delivery in Town' )
 st.sidebar.markdown( """___""" )
 
 st.sidebar.markdown( '## Selecione uma data limite ' )
+
+date_value = pd.Timestamp(2022, 4, 13)
+date_string = date_value.strftime("%Y-%m-%d")
+
 date_slider = st.sidebar.slider(
     "Até qual valor?",
-    value=pd.Timestamp( 2022, 4, 13 ),
-    min_value=pd.Timestamp( 2022, 2, 11 ),
-    max_value=pd.Timestamp( 2022, 4, 6 ),
-    format='DD-MM-YYYY' )
-
+    value=date_string,
+    min_value=pd.Timestamp(2022, 2, 11),
+    max_value=pd.Timestamp(2022, 4, 6),
+    format='YYYY-MM-DD'
+)
 
 st.sidebar.markdown( """___""" )
 
