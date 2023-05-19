@@ -258,14 +258,18 @@ st.sidebar.markdown( """___""" )
 
 st.sidebar.markdown( '## Selecione uma data limite ' )
 
+import datetime
+
 date_value = pd.Timestamp(2022, 4, 13)
-date_string = date_value.strftime("%Y-%m-%d")
+date_timestamp = int(date_value.timestamp())
+
+date_datetime = datetime.datetime.fromtimestamp(date_timestamp)
 
 date_slider = st.sidebar.slider(
     "Até qual valor?",
-    value=date_string,
-    min_value=pd.Timestamp(2022, 2, 11),
-    max_value=pd.Timestamp(2022, 4, 6),
+    value=date_datetime,
+    min_value=datetime.datetime(2022, 2, 11),
+    max_value=datetime.datetime(2022, 4, 6),
     format='YYYY-MM-DD'
 )
 
