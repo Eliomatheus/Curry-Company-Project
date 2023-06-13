@@ -1,4 +1,4 @@
-# curry_company
+# Curry Company
 
 # 1. Problema de Negócio
 A Cury Company é uma empresa de tecnologia que criou um aplicativo
